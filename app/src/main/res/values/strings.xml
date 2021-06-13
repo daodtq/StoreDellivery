@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">StoreDellivery</string>
+    <string name="donhang">Đơn Hàng</string>
+    <string name="home">Home</string>
+    <string name="more">More</string>
+</resources>
