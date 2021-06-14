@@ -19,6 +19,7 @@
             android:contentDescription="@string/app_name"
             android:src="@drawable/logo"/>
         <TextView
+            android:fontFamily="@font/font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -27,6 +28,7 @@
             android:textSize="20sp"
             android:textStyle="bold"/>
         <TextView
+            android:fontFamily="@font/font"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -35,6 +37,7 @@
             android:gravity="center"
             android:text="Enter the OTP send to "/>
         <TextView
+            android:fontFamily="@font/font"
             android:id="@+id/textMobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,6 +55,7 @@
             android:gravity="center"
             android:orientation="horizontal">
             <EditText
+                android:fontFamily="@font/font"
                 android:id="@+id/inputCode1"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
@@ -65,6 +69,7 @@
                 android:textStyle="bold"
                 tools:ignore="LabelFor"/>
             <EditText
+                android:fontFamily="@font/font"
                 android:id="@+id/inputCode2"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
@@ -78,6 +83,7 @@
                 android:textStyle="bold"
                 tools:ignore="LabelFor"/>
             <EditText
+                android:fontFamily="@font/font"
                 android:id="@+id/inputCode3"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
@@ -91,6 +97,7 @@
                 android:textStyle="bold"
                 tools:ignore="LabelFor"/>
             <EditText
+                android:fontFamily="@font/font"
                 android:id="@+id/inputCode4"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
@@ -104,6 +111,7 @@
                 android:textStyle="bold"
                 tools:ignore="LabelFor"/>
             <EditText
+                android:fontFamily="@font/font"
                 android:id="@+id/inputCode5"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
@@ -117,6 +125,7 @@
                 android:textStyle="bold"
                 tools:ignore="LabelFor"/>
             <EditText
+                android:fontFamily="@font/font"
                 android:id="@+id/inputCode6"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
@@ -137,6 +146,7 @@
             android:gravity="center"
             android:orientation="horizontal">
             <TextView
+                android:fontFamily="@font/font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorTextSecondary"
@@ -144,6 +154,7 @@
                 android:text="Didn't receive the OTP?">
             </TextView>
             <TextView
+                android:fontFamily="@font/font"
                 android:id="@+id/textResendOTP"
                 android:layout_marginStart="8dp"
                 android:text="Resend OTP"
@@ -158,6 +169,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
+                android:fontFamily="@font/font"
                 android:id="@+id/buttonVerify"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

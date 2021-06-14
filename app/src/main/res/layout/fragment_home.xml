@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,21 +10,47 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
+        android:background="#f6f4f7"
         android:layout_height="match_parent">
         <LinearLayout
+            android:background="@color/orange_light"
             android:layout_width="match_parent"
             android:gravity="center"
+            android:orientation="horizontal"
             android:layout_height="?android:attr/actionBarSize">
+
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:id="@+id/ic_location"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_location"
+                app:tint="@color/white" />
             <TextView
-                android:layout_marginHorizontal="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="6dp"
+                android:textSize="20dp"
                 android:layout_width="match_parent"
+                android:textColor="@color/white"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:fontFamily="@font/svn_heletica"
                 android:id="@+id/nameStore"
                 android:text="Tên Cửa Hàng"/>
         </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-
+        <TextView
+            android:fontFamily="@font/svn_heletica"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textColor="@color/orange_primary"
+            android:text="Danh sách món ăn cửa hàng"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:id="@+id/ln1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </LinearLayout>

@@ -3,9 +3,14 @@ package com.example.storedellivery.DAO;
 import android.content.Context;
 
 import com.example.httpconnection.Http.HttpAdapter;
+import com.example.storedellivery.Model.ListProduct;
+import com.example.storedellivery.Model.StatusModel;
 import com.example.storedellivery.Model.StatusStore;
 import com.example.storedellivery.Model.Store;
+import com.example.storedellivery.Model.TypeProduct;
 import com.example.storedellivery.SystemService.SystemService;
+
+import java.util.List;
 
 
 public class StoreDAO {
@@ -29,6 +34,13 @@ public class StoreDAO {
         return store;
     }
 
+    public StatusModel getListProduct(int storeID){
+        StatusModel statusListProduct = systemService.getListProduct(storeID);
+        return statusListProduct;
+    }
 
-
+    public boolean changeStatus(int storeID, int productID, int status){
+        boolean change = systemService.changeStatus(storeID,productID,status);
+        return change;
+    }
 }
