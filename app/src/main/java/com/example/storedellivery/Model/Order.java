@@ -10,7 +10,7 @@ public class Order {
     private String Address;
     private double OrderLat;
     private double OrderLong;
-    private Date OrderDate;
+    private String OrderDate;
     private int CouponID;
     private double TotalMoney;
     private String Note;
@@ -72,11 +72,11 @@ public class Order {
         OrderLong = orderLong;
     }
 
-    public Date getOrderDate() {
+    public String getOrderDate() {
         return OrderDate;
     }
 
-    public void setOrderDate(Date orderDate) {
+    public void setOrderDate(String orderDate) {
         OrderDate = orderDate;
     }
 
@@ -115,7 +115,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(String orderID, int userID, int storeID, int shipID, String address, double orderLat, double orderLong, Date orderDate, int couponID, double totalMoney, String note, String status) {
+    public Order(String orderID, int userID, int storeID, int shipID, String address, double orderLat, double orderLong, String orderDate, int couponID, double totalMoney, String note, String status) {
         OrderID = orderID;
         UserID = userID;
         StoreID = storeID;

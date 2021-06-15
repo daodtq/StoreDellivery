@@ -8,9 +8,10 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.storedellivery.Fragment.DonHangFragment;
+import com.example.storedellivery.Fragment.OrderFragment;
 import com.example.storedellivery.Fragment.HomeFragment;
 import com.example.storedellivery.Fragment.MoreFragment;
+import com.example.storedellivery.Fragment.OrderNeedShipFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,7 +35,11 @@ public class MainActivity extends AppCompatActivity {
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_product:
-                    fragment = new DonHangFragment();
+                    fragment = new OrderFragment();
+                    loadFragment(fragment);
+                    return true;
+                case R.id.navigation_ship:
+                    fragment = new OrderNeedShipFragment();
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_account:

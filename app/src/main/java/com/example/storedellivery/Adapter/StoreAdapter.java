@@ -58,7 +58,8 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
             }
         });
         Picasso.with(context).load(list.get(position).getProductImage()).into(holder.ivProduct);
-        holder.tvPrice.setText(formatter.format(list.get(position).getProductPrice()));
+        holder.tvPrice.setText(formatter.format(list.get(position).getProductPrice())+ " VNĐ");
+        holder.tvNote.setText(list.get(position).getProductNote());
     }
 
     @Override
@@ -67,11 +68,12 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView nameProduct, tvPrice;
+        TextView nameProduct, tvPrice, tvNote;
         ImageView ivProduct;
         SwitchCompat swProduct;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            tvNote = itemView.findViewById(R.id.tvNote);
             nameProduct = itemView.findViewById(R.id.tvNameProduct);
             ivProduct = itemView.findViewById(R.id.ivProduct);
             swProduct = itemView.findViewById(R.id.swStatus);

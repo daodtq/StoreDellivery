@@ -3,12 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.DonHangFragment">
+    tools:context=".Fragment.OrderFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
+   <RelativeLayout
+       android:background="#f6f4f7"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/rcv"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"/>
+   </RelativeLayout>
 </FrameLayout>

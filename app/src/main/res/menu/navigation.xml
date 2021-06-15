@@ -3,17 +3,23 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_2"
-        android:fontFamily="@font/font"
+        android:fontFamily="@font/utm_avo"
         android:title="@string/home"
         />
     <item
-        android:fontFamily="@font/font"
+        android:fontFamily="@font/utm_avo"
         android:id="@+id/navigation_product"
         android:icon="@drawable/ic_1"
         android:title="@string/donhang"
         />
     <item
-        android:fontFamily="@font/font"
+        android:fontFamily="@font/utm_avo"
+        android:id="@+id/navigation_ship"
+        android:icon="@drawable/ic_4"
+        android:title="Ship"
+        />
+    <item
+        android:fontFamily="@font/utm_avo"
         android:id="@+id/navigation_account"
         android:icon="@drawable/ic_3"
         android:title="@string/more"

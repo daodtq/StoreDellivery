@@ -34,24 +34,20 @@
                 android:textColor="@color/white"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:fontFamily="@font/svn_heletica"
+                android:fontFamily="@font/utm_avobold"
                 android:id="@+id/nameStore"
                 android:text="Tên Cửa Hàng"/>
         </LinearLayout>
-        <TextView
-            android:fontFamily="@font/svn_heletica"
-            android:gravity="center"
-            android:textSize="18dp"
-            android:textColor="@color/orange_primary"
-            android:text="Danh sách món ăn cửa hàng"
-            android:layout_margin="8dp"
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <LinearLayout
-            android:padding="8dp"
-            android:orientation="vertical"
-            android:id="@+id/ln1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_marginHorizontal="8dp"
+                android:orientation="vertical"
+                android:id="@+id/ln1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </ScrollView>
     </LinearLayout>
 </FrameLayout>
