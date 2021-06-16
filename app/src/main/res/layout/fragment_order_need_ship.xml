@@ -14,7 +14,6 @@
         <LinearLayout
             android:padding="3dp"
             android:gravity="center"
-            android:background="@drawable/border_filter"
             android:layout_margin="8dp"
             android:id="@+id/ln4"
             android:layout_width="wrap_content"

@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ProgressBar;
 
 import androidx.fragment.app.Fragment;
@@ -29,6 +30,7 @@ public class OrderFragment extends Fragment {
     ArrayList<Order> list;
     OrderDAO dao;
     DbHelper dbHelper;
+
     public OrderFragment() {
         // Required empty public constructor
     }
@@ -49,7 +51,7 @@ public class OrderFragment extends Fragment {
         rcv = view.findViewById(R.id.rcv);
         dao = new OrderDAO(getActivity());
         dbHelper = new DbHelper(getActivity());
-        list = dao.getOder(dbHelper.getStore().getStoreID(),"Đang đợi xử lý");
+        list = dao.getOder(dbHelper.getStore().getStoreID(),"Cửa hàng đang chuẩn bị");
         adapter = new OrderAdapter(getActivity(), list);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         rcv.setLayoutManager(layoutManager);
@@ -70,8 +72,6 @@ public class OrderFragment extends Fragment {
                 transaction.commit();
             }
         });
-
-
         return view;
     }
 

@@ -19,6 +19,7 @@
     <color name="gradient_end_color">#18a3fe</color>
     <color name="intro_title_color">#000000</color>
     <color name="background">#f5f5f5</color>
+    <color name="grey_10">#e6e6e6</color>
 
     <color name="orange_primary">#fc6011</color>
     <color name="orange_light">#ff9245</color>

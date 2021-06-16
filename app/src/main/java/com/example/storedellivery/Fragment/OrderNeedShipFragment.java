@@ -1,7 +1,10 @@
 package com.example.storedellivery.Fragment;
 
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.storedellivery.Adapter.DetailOrderAdapter;
@@ -68,7 +72,7 @@ public class OrderNeedShipFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getActivity(), adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
+                ((TextView) adapterView.getChildAt(0)).setTextColor(Color.BLACK);
                 list = dao.getOder(dbHelper.getStore().getStoreID(),adapterView.getItemAtPosition(i).toString());
                 adapter = new OrderAdapter(getActivity(), list);
                 rcv.setAdapter(adapter);

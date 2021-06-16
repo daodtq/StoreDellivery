@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.storedellivery.Adapter.DetailOrderAdapter;
 import com.example.storedellivery.Adapter.OrderAdapter;
 import com.example.storedellivery.Adapter.ShipperAdapter;
+import com.example.storedellivery.DAO.NotificationDAO;
 import com.example.storedellivery.DAO.OrderDAO;
 import com.example.storedellivery.DAO.ShipDAO;
 import com.example.storedellivery.Model.DetailOrder;
@@ -45,7 +46,7 @@ public class DetailOrderShipFragment extends Fragment {
     TextView id, address, status, time, money, btnStatus1, btnStatus2;
     DecimalFormat formatter = new DecimalFormat("###,###,###");
     ArrayList<Shipper> listShip;
-
+    NotificationDAO notificationDAO;
     public DetailOrderShipFragment(Order order) {
         this.order = order;
         // Required empty public constructor
@@ -78,6 +79,7 @@ public class DetailOrderShipFragment extends Fragment {
         time.setText(order.getOrderDate());
         money.setText(formatter.format(order.getTotalMoney()) + " VNĐ");
         dao = new OrderDAO(getActivity());
+        notificationDAO = new NotificationDAO(getActivity());
         list = dao.getDetailOrder(order.getOrderID());
         adapter = new DetailOrderAdapter(getActivity(), list);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
@@ -115,6 +117,7 @@ public class DetailOrderShipFragment extends Fragment {
                         public void onClick(View view) {
                             int shipID = listShip.get(spinner.getSelectedItemPosition()).getShipID();
                             dao.changeStatus(order.getOrderID(), "Tài xế đã nhận hàng",shipID, "");
+                            notificationDAO.sendNotifyToShip("Đơn hàng "+ order.getOrderID(),"Bạn nhận được một đơn hàng mới.",order.getUserPhone());
                             builder.dismiss();
                             Toast.makeText(getActivity(), "Tài xế đã nhận hàng", Toast.LENGTH_SHORT).show();
                             backShip();
@@ -142,6 +145,7 @@ public class DetailOrderShipFragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         dao.changeStatus(order.getOrderID(), "Đã hủy đơn hàng", edtNote.getText().toString());
+                        notificationDAO.sendNotifyToUser("Đơn hàng "+ order.getOrderID(),"Đơn hàng của bạn bị hủy..",order.getUserPhone());
                         builder.dismiss();
                         Toast.makeText(getActivity(), "Đã Hủy đơn hàng", Toast.LENGTH_SHORT).show();
                         backShip();

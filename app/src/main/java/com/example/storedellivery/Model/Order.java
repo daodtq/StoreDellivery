@@ -15,6 +15,10 @@ public class Order {
     private double TotalMoney;
     private String Note;
     private String Status;
+    private int UserPhone;
+
+    public Order() {
+    }
 
     public String getOrderID() {
         return OrderID;
@@ -112,10 +116,15 @@ public class Order {
         Status = status;
     }
 
-    public Order() {
+    public int getUserPhone() {
+        return UserPhone;
     }
 
-    public Order(String orderID, int userID, int storeID, int shipID, String address, double orderLat, double orderLong, String orderDate, int couponID, double totalMoney, String note, String status) {
+    public void setUserPhone(int userPhone) {
+        UserPhone = userPhone;
+    }
+
+    public Order(String orderID, int userID, int storeID, int shipID, String address, double orderLat, double orderLong, String orderDate, int couponID, double totalMoney, String note, String status, int userPhone) {
         OrderID = orderID;
         UserID = userID;
         StoreID = storeID;
@@ -128,5 +137,6 @@ public class Order {
         TotalMoney = totalMoney;
         Note = note;
         Status = status;
+        UserPhone = userPhone;
     }
 }

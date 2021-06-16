@@ -5,6 +5,7 @@ import com.example.httpconnection.HttpAnotation.Form;
 import com.example.httpconnection.HttpAnotation.HttpMethod;
 import com.example.httpconnection.HttpAnotation.MethodType;
 import com.example.httpconnection.HttpAnotation.Query;
+import com.example.storedellivery.Model.Notification;
 import com.example.storedellivery.Model.StatusDetailOrder;
 import com.example.storedellivery.Model.StatusModel;
 import com.example.storedellivery.Model.StatusOrder;
@@ -39,4 +40,8 @@ public interface SystemService {
 
     @HttpMethod(method = MethodType.POST, url = "totnghieplt15201_database/api/ListProduct_changeStatus.php")
     boolean changeStatus(@Form(name = "storeID") int store,@Form(name = "productID") int productId,@Form(name = "status") int status);
+
+    @HttpMethod(method = MethodType.POST, url = "totnghieplt15201_database/api/Notification_storeSend.php")
+    Notification sendNotify(@Form(name = "title") String title, @Form(name = "message") String message, @Form(name = "phone") int phone, @Form(name = "object") int object);
+
 }
