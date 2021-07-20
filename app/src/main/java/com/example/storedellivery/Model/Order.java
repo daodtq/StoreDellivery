@@ -17,9 +17,6 @@ public class Order {
     private String Status;
     private int UserPhone;
 
-    public Order() {
-    }
-
     public String getOrderID() {
         return OrderID;
     }
@@ -122,6 +119,9 @@ public class Order {
 
     public void setUserPhone(int userPhone) {
         UserPhone = userPhone;
+    }
+
+    public Order() {
     }
 
     public Order(String orderID, int userID, int storeID, int shipID, String address, double orderLat, double orderLong, String orderDate, int couponID, double totalMoney, String note, String status, int userPhone) {

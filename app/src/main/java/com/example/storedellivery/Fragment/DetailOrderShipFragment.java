@@ -85,8 +85,10 @@ public class DetailOrderShipFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         rcv.setLayoutManager(layoutManager);
         rcv.setAdapter(adapter);
-
-
+        if ((order.getStatus()).equals("Đang giao cho tài xế")){
+            btnStatus1.setVisibility(View.VISIBLE);
+            btnStatus2.setVisibility(View.VISIBLE);
+        }
 
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,10 +118,10 @@ public class DetailOrderShipFragment extends Fragment {
                         @Override
                         public void onClick(View view) {
                             int shipID = listShip.get(spinner.getSelectedItemPosition()).getShipID();
-                            dao.changeStatus(order.getOrderID(), "Tài xế đã nhận hàng",shipID, "");
-                            notificationDAO.sendNotifyToShip("Đơn hàng "+ order.getOrderID(),"Bạn nhận được một đơn hàng mới.",order.getUserPhone());
+                            dao.changeStatus(order.getOrderID(), "Tài xế nhận hàng",shipID, "");
+                            notificationDAO.sendNotifyToShip("Đơn hàng "+ order.getOrderID(),"Bạn nhận được một đơn hàng mới.",dao.getPhone(order.getShipID()));
                             builder.dismiss();
-                            Toast.makeText(getActivity(), "Tài xế đã nhận hàng", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Đã chọn tài xế nhận hàng", Toast.LENGTH_SHORT).show();
                             backShip();
                         }
                     });

@@ -94,7 +94,7 @@ public class DetailOrderFragment extends Fragment {
                         dao.changeStatus(order.getOrderID(), "Đang giao cho tài xế", "");
                         notificationDAO.sendNotifyToUser("Đơn hàng "+ order.getOrderID(),"Đơn hàng của bạn đã sẳn sàng, đang đợi tài xế lấy hàng.",order.getUserPhone());
                         builder.dismiss();
-                        Toast.makeText(getActivity(), "Đã chuyển sang Tài xế", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Đã chuyển sang đơn hàng Tài xế", Toast.LENGTH_SHORT).show();
                         backOrder();
                     }
                 });

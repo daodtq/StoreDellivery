@@ -1,15 +1,19 @@
 package com.example.storedellivery.Fragment;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.storedellivery.Activity.SendOTPActivity;
 import com.example.storedellivery.DbHelper.DbHelper;
@@ -56,9 +60,46 @@ public class MoreFragment extends Fragment {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dbHelper.delete();
-                Intent i = new Intent(getActivity(), SendOTPActivity.class);
-                startActivity(i);
+                AlertDialog builder = new AlertDialog.Builder(getActivity()).create();
+                View view1 = LayoutInflater.from(getActivity()).inflate(R.layout.alert_status, null);
+                TextView ok = view1.findViewById(R.id.tvOK);
+                TextView note = view1.findViewById(R.id.tvQuestion);
+                TextView cancel = view1.findViewById(R.id.tvCancel);
+                ok.setText("Đăng xuất");
+                cancel.setText("Cancel");
+                note.setText("Bạn muốn đăng xuất khỏi cửa hàng?");
+                ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dbHelper.delete();
+                        Intent i = new Intent(getActivity(), SendOTPActivity.class);
+                        startActivity(i);
+                    }
+                });
+                cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        builder.dismiss();
+                    }
+                });
+                builder.setView(view1);
+                builder.show();
+
+            }
+        });
+        btnDonHang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AllOrderFragment fragment = new AllOrderFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction().setCustomAnimations(
+                        R.anim.slide_in,  // enter
+                        R.anim.fade_out,  // exit
+                        R.anim.fade_in,   // popEnter
+                        R.anim.slide_out  // popExit
+                );
+                transaction.replace(R.id.frame_container, fragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
         return view;

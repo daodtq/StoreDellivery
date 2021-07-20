@@ -72,7 +72,6 @@ public class OrderNeedShipFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                ((TextView) adapterView.getChildAt(0)).setTextColor(Color.BLACK);
                 list = dao.getOder(dbHelper.getStore().getStoreID(),adapterView.getItemAtPosition(i).toString());
                 adapter = new OrderAdapter(getActivity(), list);
                 rcv.setAdapter(adapter);
@@ -102,7 +101,7 @@ public class OrderNeedShipFragment extends Fragment {
         });
         List<String> filter = new ArrayList<String>();
         filter.add("Đang giao cho tài xế");
-        filter.add("Tài xế đã nhận hàng");
+        filter.add("Tài xế nhận hàng");
         filter.add("Đang giao");
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, filter);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

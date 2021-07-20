@@ -20,7 +20,7 @@ public class StoreDAO {
     public StoreDAO(Context context) {
         this.context = context;
         HttpAdapter adapter = new HttpAdapter(context);
-        adapter.setBaseUrl("http://192.168.88.155:81/");
+        adapter.setBaseUrl("http://192.168.1.142:81/");
         systemService = adapter.create(SystemService.class);
     }
 
