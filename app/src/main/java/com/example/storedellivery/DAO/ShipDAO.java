@@ -1,8 +1,10 @@
 package com.example.storedellivery.DAO;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.example.httpconnection.Http.HttpAdapter;
+import com.example.storedellivery.HTTP_URL;
 import com.example.storedellivery.Model.DetailOrder;
 import com.example.storedellivery.Model.Order;
 import com.example.storedellivery.Model.Shipper;
@@ -17,7 +19,7 @@ public class ShipDAO {
     public ShipDAO(Context context) {
         this.context = context;
         HttpAdapter adapter = new HttpAdapter(context);
-        adapter.setBaseUrl("http://192.168.1.142:81/");
+        adapter.setBaseUrl(HTTP_URL.Final_URL);
         systemService = adapter.create(SystemService.class);
     }
 

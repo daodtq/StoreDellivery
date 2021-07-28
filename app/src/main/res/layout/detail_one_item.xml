@@ -57,24 +57,51 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:gravity="right"
                 tools:ignore="MissingConstraints">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Số lượng: "
-                    android:textColor="@color/orange_primary"
-                    android:textSize="18dp"
-                    />
-                <TextView
-                    android:id="@+id/tvAmount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2"
-                    android:fontFamily="@font/utm_avobold"
-                    android:textColor="@color/orange_primary"
-                    android:textSize="18dp"
-                    />
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Size: "
+                        android:textColor="@color/orange_primary"
+                        android:textSize="18dp"
+                        />
+                    <TextView
+                        android:id="@+id/tvSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="L"
+                        android:fontFamily="@font/utm_avo"
+                        android:textColor="@color/orange_primary"
+                        android:textSize="18dp"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Số lượng: "
+                        android:textColor="@color/orange_primary"
+                        android:textSize="18dp"
+                        />
+                    <TextView
+                        android:id="@+id/tvAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2"
+                        android:fontFamily="@font/utm_avobold"
+                        android:textColor="@color/orange_primary"
+                        android:textSize="18dp"
+                        />
+                </LinearLayout>
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>

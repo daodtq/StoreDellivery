@@ -60,7 +60,7 @@
             android:background="@drawable/button"
             android:fontFamily="@font/utm_avo"
             android:gravity="center"
-            android:text="Xong"
+            android:text="Xác nhận"
             android:textColor="#D3D3D3"
             android:textStyle="bold" />
 
@@ -73,7 +73,7 @@
             android:background="@drawable/button"
             android:fontFamily="@font/utm_avo"
             android:gravity="center"
-            android:text="Chưa"
+            android:text="Hủy"
             android:textColor="#D3D3D3"
             android:textStyle="bold" />
     </LinearLayout>

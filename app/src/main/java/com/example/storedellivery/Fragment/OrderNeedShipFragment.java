@@ -60,7 +60,7 @@ public class OrderNeedShipFragment extends Fragment {
         spinner = view.findViewById(R.id.spinner);
         dao = new OrderDAO(getActivity());
         dbHelper = new DbHelper(getActivity());
-        list = dao.getOder(dbHelper.getStore().getStoreID(),"Đang giao cho tài xế");
+        list = dao.getOder(dbHelper.getStore().getStoreID(),"Đợi tài xế lấy hàng");
         adapter = new OrderAdapter(getActivity(), list);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         rcv.setLayoutManager(layoutManager);
@@ -100,8 +100,7 @@ public class OrderNeedShipFragment extends Fragment {
             }
         });
         List<String> filter = new ArrayList<String>();
-        filter.add("Đang giao cho tài xế");
-        filter.add("Tài xế nhận hàng");
+        filter.add("Đợi tài xế lấy hàng");
         filter.add("Đang giao");
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, filter);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

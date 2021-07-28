@@ -54,6 +54,7 @@ public class HomeFragment extends Fragment {
         dbHelper= new DbHelper(getActivity());
         nameStore.setText(dbHelper.getStore().getStoreName());
         StatusModel statusModel = dao.getListProduct(dbHelper.getStore().getStoreID());
+        Log.d("abc123", String.valueOf(dbHelper.getStore().getStoreID()));
         typeProductList = statusModel.getTypeProduct();
         listProductList = statusModel.getListProduct();
         for (int i =0; i<typeProductList.size(); i++){

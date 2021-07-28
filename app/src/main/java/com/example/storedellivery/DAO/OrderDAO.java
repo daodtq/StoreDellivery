@@ -3,6 +3,7 @@ package com.example.storedellivery.DAO;
 import android.content.Context;
 
 import com.example.httpconnection.Http.HttpAdapter;
+import com.example.storedellivery.HTTP_URL;
 import com.example.storedellivery.Model.DetailOrder;
 import com.example.storedellivery.Model.Order;
 import com.example.storedellivery.Model.Shipper;
@@ -21,7 +22,7 @@ public class OrderDAO {
     public OrderDAO(Context context) {
         this.context = context;
         HttpAdapter adapter = new HttpAdapter(context);
-        adapter.setBaseUrl("http://192.168.1.142:81/");
+        adapter.setBaseUrl(HTTP_URL.Final_URL);
         systemService = adapter.create(SystemService.class);
     }
 
@@ -32,6 +33,11 @@ public class OrderDAO {
 
     public ArrayList<Order> getOder(int storeID){
         ArrayList<Order> list = systemService.getOder(storeID).getOrder();
+        return list;
+    }
+
+    public ArrayList<Order> getNewOder(int storeID){
+        ArrayList<Order> list = systemService.getNewOder(storeID).getOrder();
         return list;
     }
 
@@ -54,5 +60,10 @@ public class OrderDAO {
     public int getPhone(int phone){
         int ship = systemService.getShip(phone).getShipPhone();
         return ship;
+    }
+
+    public Shipper getShip(int shipID){
+        Shipper shipper = systemService.getShip(shipID);
+        return shipper;
     }
 }

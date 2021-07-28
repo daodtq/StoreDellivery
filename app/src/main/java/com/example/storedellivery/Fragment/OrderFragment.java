@@ -2,6 +2,7 @@ package com.example.storedellivery.Fragment;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,7 +52,7 @@ public class OrderFragment extends Fragment {
         rcv = view.findViewById(R.id.rcv);
         dao = new OrderDAO(getActivity());
         dbHelper = new DbHelper(getActivity());
-        list = dao.getOder(dbHelper.getStore().getStoreID(),"Cửa hàng đang chuẩn bị");
+        list = dao.getNewOder(dbHelper.getStore().getStoreID());
         adapter = new OrderAdapter(getActivity(), list);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         rcv.setLayoutManager(layoutManager);

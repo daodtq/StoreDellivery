@@ -48,11 +48,11 @@ public class OrderAllAdapter extends RecyclerView.Adapter<OrderAllAdapter.ViewHo
         Log.d("abc123", list.get(position).getStatus());
         String s  =list.get(position).getStatus();
         if (s.equals("Giao hàng thành công")){
-            holder.ivStatus.setImageResource(R.drawable.ic_status);
+            holder.ivStatus.setImageResource(R.drawable.ic_status_on);
         }else if (s.equals("Đã hủy đơn hàng")||s.equals("Giao hàng thất bại")){
             holder.ivStatus.setImageResource(R.drawable.ic_status_off);
         }else {
-            holder.ivStatus.setImageResource(R.drawable.ic_status_on);
+            holder.ivStatus.setImageResource(R.drawable.ic_status);
         }
     }
 

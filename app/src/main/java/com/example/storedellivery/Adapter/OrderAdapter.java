@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -48,6 +49,10 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         holder.id.setText(list.get(position).getOrderID());
         holder.address.setText(list.get(position).getAddress());
         holder.money.setText(formatter.format(list.get(position).getTotalMoney())+ " VNĐ");
+        String status = list.get(position).getStatus();
+        if (status.equals("Đang đợi xác nhận")){
+            holder.ivStatus.setImageResource(R.drawable.ic_status_on);
+        }
     }
 
     @Override
@@ -58,8 +63,10 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView id,address,money;
         TextView status;
+        ImageView ivStatus;
         public ViewHolder(@NonNull  View itemView) {
             super(itemView);
+            ivStatus = itemView.findViewById(R.id.status);
             id = itemView.findViewById(R.id.tvOrderID);
             address = itemView.findViewById(R.id.tvAddress);
             money = itemView.findViewById(R.id.tvTotalMoney);
