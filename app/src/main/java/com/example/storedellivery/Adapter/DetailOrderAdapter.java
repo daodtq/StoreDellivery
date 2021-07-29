@@ -37,7 +37,8 @@ public class DetailOrderAdapter extends RecyclerView.Adapter<DetailOrderAdapter.
         Picasso.with(context).load(list.get(position).getProductImage()).into(holder.iv);
         holder.name.setText(list.get(position).getProductName());
         holder.type.setText(list.get(position).getTypeName());
-        holder.amount.setText(String.valueOf(list.get(position).getAmount()));
+        holder.amount.setText(String.valueOf(list.get(position).getQuantity()));
+        holder.tvSize.setText(String.valueOf(list.get(position).getSizeName()));
     }
 
     @Override
@@ -46,10 +47,11 @@ public class DetailOrderAdapter extends RecyclerView.Adapter<DetailOrderAdapter.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView name, type, amount;
+        TextView name, type, amount, tvSize;
         ImageView iv;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            tvSize = itemView.findViewById(R.id.tvSize);
             iv = itemView.findViewById(R.id.ivProduct);
             name = itemView.findViewById(R.id.tvNameProduct);
             type = itemView.findViewById(R.id.tvTypeProduct);

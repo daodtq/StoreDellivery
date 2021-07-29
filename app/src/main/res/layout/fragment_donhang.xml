@@ -11,7 +11,61 @@
        android:background="#f6f4f7"
        android:layout_width="match_parent"
        android:layout_height="match_parent">
+       <LinearLayout
+           android:id="@+id/line1"
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <LinearLayout
+               android:padding="8dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <ImageView
+                   android:layout_marginRight="8dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/ic_status"/>
+               <TextView
+                   android:textColor="@color/orange_primary"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Đơn hàng đang chuẩn bị: "/>
+               <TextView
+                   android:id="@+id/stt_1"
+                   android:textStyle="bold"
+                   android:textColor="@color/orange_dark"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="0"/>
+           </LinearLayout>
+           <LinearLayout
+               android:padding="8dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <ImageView
+                   android:layout_marginRight="8dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/ic_status_on"/>
+               <TextView
+                   android:textColor="@color/orange_primary"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Đơn hàng đợi xác nhận: "/>
+               <TextView
+                   android:id="@+id/stt_2"
+                   android:textStyle="bold"
+                   android:textColor="@color/orange_dark"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="0"/>
+           </LinearLayout>
+
+       </LinearLayout>
        <androidx.recyclerview.widget.RecyclerView
+           android:layout_below="@+id/line1"
            android:id="@+id/rcv"
            android:layout_width="match_parent"
            android:layout_height="match_parent"/>

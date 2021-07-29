@@ -44,7 +44,7 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:28.0.1')
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-appcheck-safetynet:16.0.0-beta01'
-
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
 
 }

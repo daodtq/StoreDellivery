@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -31,6 +32,7 @@ public class OrderFragment extends Fragment {
     ArrayList<Order> list;
     OrderDAO dao;
     DbHelper dbHelper;
+    TextView count1, count2;
 
     public OrderFragment() {
         // Required empty public constructor
@@ -51,8 +53,13 @@ public class OrderFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_donhang, container, false);
         rcv = view.findViewById(R.id.rcv);
         dao = new OrderDAO(getActivity());
+        count1 = view.findViewById(R.id.stt_1);
+        count2 = view.findViewById(R.id.stt_2);
         dbHelper = new DbHelper(getActivity());
         list = dao.getNewOder(dbHelper.getStore().getStoreID());
+        int count = dao.getCount(dbHelper.getStore().getStoreID());
+        count2.setText(String.valueOf(count));
+        count1.setText(String.valueOf(list.size()-count));
         adapter = new OrderAdapter(getActivity(), list);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         rcv.setLayoutManager(layoutManager);

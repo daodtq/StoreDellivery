@@ -81,7 +81,9 @@ public class DetailOrderFragment extends Fragment {
         money.setText(formatter.format(order.getTotalMoney()) + " VNĐ");
         if (order.getStatus().equals("Cửa hàng đang chuẩn bị")){
             btnStatus3.setEnabled(false);
+            btnStatus2.setEnabled(false);
             btnStatus3.setBackground(getResources().getDrawable(R.drawable.border_bottom_off));
+            btnStatus2.setBackground(getResources().getDrawable(R.drawable.border_bottom_off));
         }else {
             btnStatus1.setEnabled(false);
             btnStatus1.setBackground(getResources().getDrawable(R.drawable.border_bottom_off));
@@ -113,15 +115,15 @@ public class DetailOrderFragment extends Fragment {
                 TextView question = view1.findViewById(R.id.tvQuestion);
                 TextView cancel = view1.findViewById(R.id.tvCancel);
                 question.setText("Vui lòng chọn Shipper?");
-                ok.setText("Đã nhận hàng");
-                cancel.setText("Chưa nhận hàng");
+                ok.setText("Xác nhận");
+                cancel.setText("Hủy");
                 spinner.setAdapter(shipperAdapter);
                 ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         int shipID = listShip.get(spinner.getSelectedItemPosition()).getShipID();
                         dao.changeStatus(order.getOrderID(), "Đợi tài xế lấy hàng",shipID, "");
-                        notificationDAO.sendNotifyToShip("Đơn hàng "+ order.getOrderID(),"Bạn nhận được một đơn hàng mới.",dao.getPhone(order.getShipID()));
+                        notificationDAO.sendNotifyToShip("Đơn hàng "+ order.getOrderID(),"Bạn nhận được một đơn hàng mới.",dao.getPhone(shipID));
                         builder.dismiss();
                         Toast.makeText(getActivity(), "Đã chọn tài xế nhận hàng", Toast.LENGTH_SHORT).show();
                         backOrder();

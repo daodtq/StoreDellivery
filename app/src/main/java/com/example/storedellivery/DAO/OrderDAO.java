@@ -10,6 +10,7 @@ import com.example.storedellivery.Model.Shipper;
 import com.example.storedellivery.Model.StatusModel;
 import com.example.storedellivery.Model.StatusStore;
 import com.example.storedellivery.Model.Store;
+import com.example.storedellivery.Model.Total;
 import com.example.storedellivery.SystemService.SystemService;
 
 import java.util.ArrayList;
@@ -62,8 +63,23 @@ public class OrderDAO {
         return ship;
     }
 
+    public int getCount(int storeID){
+        int count = systemService.getCount(storeID);
+        return count;
+    }
+
     public Shipper getShip(int shipID){
         Shipper shipper = systemService.getShip(shipID);
         return shipper;
+    }
+
+    public ArrayList<Total> getTotal(int storeID){
+        ArrayList<Total> totals = systemService.getTotal(storeID).getTotal();
+        return totals;
+    }
+
+    public int getTotalDate(int storeID){
+        int totals = systemService.getTotalDate(storeID);
+        return totals;
     }
 }

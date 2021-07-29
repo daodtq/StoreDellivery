@@ -13,6 +13,7 @@ import com.example.storedellivery.Model.StatusOrder;
 import com.example.storedellivery.Model.StatusShipper;
 import com.example.storedellivery.Model.StatusStore;
 import com.example.storedellivery.Model.Store;
+import com.example.storedellivery.Model.ThongKeStatus;
 
 public interface SystemService {
     @HttpMethod(method = MethodType.POST, url = "FOODDELIVERY/api/Store_login.php")
@@ -53,5 +54,14 @@ public interface SystemService {
 
     @HttpMethod(method = MethodType.POST, url = "FOODDELIVERY/api/Notification_storeSend.php")
     Notification sendNotify(@Form(name = "title") String title, @Form(name = "message") String message, @Form(name = "phone") int phone, @Form(name = "object") int object);
+
+    @HttpMethod(method = MethodType.POST, url = "FOODDELIVERY/api/Order_Count.php")
+    int getCount(@Form(name = "storeID") int storeID);
+
+    @HttpMethod(method = MethodType.POST, url = "FOODDELIVERY/api/ThongKe_ofYear.php")
+    ThongKeStatus getTotal(@Form(name = "storeID") int storeID);
+
+    @HttpMethod(method = MethodType.POST, url = "FOODDELIVERY/api/ThongKe_ofDate.php")
+    int getTotalDate(@Form(name = "storeID") int storeID);
 
 }

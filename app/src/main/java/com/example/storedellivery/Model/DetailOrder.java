@@ -2,10 +2,10 @@ package com.example.storedellivery.Model;
 
 public class DetailOrder {
     private int DetailID;
-    private int OrderID;
+    private String OrderID;
     private int ProductID;
     private int Amount;
-    private int CartMoney;
+    private int Quantity;
     private String ProductName;
     private int ProductPrice;
     private String ProductImage;
@@ -13,6 +13,8 @@ public class DetailOrder {
     private int TypeID;
     private String TypeName;
     private String TypeNote;
+    private String SizeID;
+    private String SizeName;
 
     public int getDetailID() {
         return DetailID;
@@ -22,11 +24,11 @@ public class DetailOrder {
         DetailID = detailID;
     }
 
-    public int getOrderID() {
+    public String getOrderID() {
         return OrderID;
     }
 
-    public void setOrderID(int orderID) {
+    public void setOrderID(String orderID) {
         OrderID = orderID;
     }
 
@@ -46,12 +48,12 @@ public class DetailOrder {
         Amount = amount;
     }
 
-    public int getCartMoney() {
-        return CartMoney;
+    public int getQuantity() {
+        return Quantity;
     }
 
-    public void setCartMoney(int cartMoney) {
-        CartMoney = cartMoney;
+    public void setQuantity(int quantity) {
+        Quantity = quantity;
     }
 
     public String getProductName() {
@@ -110,12 +112,31 @@ public class DetailOrder {
         TypeNote = typeNote;
     }
 
-    public DetailOrder(int detailID, int orderID, int productID, int amount, int cartMoney, String productName, int productPrice, String productImage, String productNote, int typeID, String typeName, String typeNote) {
+    public String getSizeID() {
+        return SizeID;
+    }
+
+    public void setSizeID(String sizeID) {
+        SizeID = sizeID;
+    }
+
+    public String getSizeName() {
+        return SizeName;
+    }
+
+    public void setSizeName(String sizeName) {
+        SizeName = sizeName;
+    }
+
+    public DetailOrder() {
+    }
+
+    public DetailOrder(int detailID, String orderID, int productID, int amount, int quantity, String productName, int productPrice, String productImage, String productNote, int typeID, String typeName, String typeNote, String sizeID, String sizeName) {
         DetailID = detailID;
         OrderID = orderID;
         ProductID = productID;
         Amount = amount;
-        CartMoney = cartMoney;
+        Quantity = quantity;
         ProductName = productName;
         ProductPrice = productPrice;
         ProductImage = productImage;
@@ -123,8 +144,7 @@ public class DetailOrder {
         TypeID = typeID;
         TypeName = typeName;
         TypeNote = typeNote;
-    }
-
-    public DetailOrder() {
+        SizeID = sizeID;
+        SizeName = sizeName;
     }
 }
