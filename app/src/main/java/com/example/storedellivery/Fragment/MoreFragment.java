@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -23,7 +24,7 @@ import java.text.DecimalFormat;
 
 
 public class MoreFragment extends Fragment {
-    RelativeLayout btnDonHang, btnThongKe;
+    RelativeLayout btnDonHang, btnThongKe, Tab_ship;
     TextView name, address, phone;
     ImageView logout;
     DbHelper dbHelper;
@@ -52,11 +53,22 @@ public class MoreFragment extends Fragment {
         logout = view.findViewById(R.id.ivLogout);
         btnDonHang = view.findViewById(R.id.donHang);
         btnThongKe = view.findViewById(R.id.thongKe);
+        Tab_ship = view.findViewById(R.id.Tab_ship);
 
         dbHelper = new DbHelper(getActivity());
         name.setText(dbHelper.getStore().getStoreName());
         address.setText(dbHelper.getStore().getStoreAddress());
         phone.setText("0" + formatter.format(dbHelper.getStore().getStorePhone()));
+
+
+        Tab_ship.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppCompatActivity activity = (AppCompatActivity) getActivity();
+                Fragment myFragment = new ShipperFragment();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, myFragment).addToBackStack(null).commit();
+            }
+        });
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

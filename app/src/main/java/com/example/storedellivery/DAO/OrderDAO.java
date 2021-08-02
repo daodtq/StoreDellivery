@@ -73,6 +73,11 @@ public class OrderDAO {
         return shipper;
     }
 
+    public ArrayList<Order> getOrderFromShip(int shipID){
+        ArrayList<Order> list = systemService.getOrderFromShip(shipID).getOrders();
+        return list;
+    }
+
     public ArrayList<Total> getTotal(int storeID){
         ArrayList<Total> totals = systemService.getTotal(storeID).getTotal();
         return totals;

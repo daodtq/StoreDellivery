@@ -47,7 +47,7 @@ public class ShipperAdapter extends BaseAdapter {
         TextView txtName = (TextView)view.findViewById(R.id.tvNameShip);
         ImageView txtStatus = (ImageView)view.findViewById(R.id.tvStatus);
         ImageView iv = (ImageView)view.findViewById(R.id.ivShipper);
-        if (list.get(i).getStatus()==0){
+        if (list.get(i).getStatus().equals("Trực Tuyến")){
             txtStatus.setImageResource(R.drawable.ic_status_on);
         }else {
             txtStatus.setImageResource(R.drawable.ic_status_off);

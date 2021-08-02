@@ -62,7 +62,7 @@ public class DetailOrderShipFragment extends Fragment {
         int shipID = order.getShipID();
         Shipper shipper = dao.getShip(shipID);
         nameShip.setText(shipper.getShipName());
-        if (shipper.getStatus()==0){
+        if (shipper.getStatus().equals("Trực Tuyến")){
             ivStatus.setImageResource(R.drawable.ic_status_on);
         }else {
             ivStatus.setImageResource(R.drawable.ic_status_off);

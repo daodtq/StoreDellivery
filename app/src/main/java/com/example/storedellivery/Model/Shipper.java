@@ -9,7 +9,7 @@ public class Shipper {
     private String ShipNumberCar;
     private double ShipLat;
     private double ShipLong;
-    private int Status;
+    private String Status;
     private String Token;
 
     @Override
@@ -81,11 +81,11 @@ public class Shipper {
         ShipLong = shipLong;
     }
 
-    public int getStatus() {
+    public String getStatus() {
         return Status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         Status = status;
     }
 
@@ -100,7 +100,7 @@ public class Shipper {
     public Shipper() {
     }
 
-    public Shipper(int shipID, String shipName, String shipImage, int shipPhone, int storeID, String shipNumberCar, double shipLat, double shipLong, int status, String token) {
+    public Shipper(int shipID, String shipName, String shipImage, int shipPhone, int storeID, String shipNumberCar, double shipLat, double shipLong, String status, String token) {
         ShipID = shipID;
         ShipName = shipName;
         ShipImage = shipImage;

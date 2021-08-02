@@ -33,6 +33,7 @@ public class HomeFragment extends Fragment {
     StoreAdapter adapter;
     DbHelper dbHelper ;
     TextView nameStore;
+
     public HomeFragment() {
         // Required empty public constructor
     }

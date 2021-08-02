@@ -5,6 +5,7 @@ import com.example.httpconnection.HttpAnotation.Form;
 import com.example.httpconnection.HttpAnotation.HttpMethod;
 import com.example.httpconnection.HttpAnotation.MethodType;
 import com.example.httpconnection.HttpAnotation.Query;
+import com.example.storedellivery.Model.ModelListOrder;
 import com.example.storedellivery.Model.Notification;
 import com.example.storedellivery.Model.Shipper;
 import com.example.storedellivery.Model.StatusDetailOrder;
@@ -63,5 +64,9 @@ public interface SystemService {
 
     @HttpMethod(method = MethodType.POST, url = "FOODDELIVERY/api/ThongKe_ofDate.php")
     int getTotalDate(@Form(name = "storeID") int storeID);
+
+    @HttpMethod(method = MethodType.POST, url = "FOODDELIVERY/api/getOrder.php/")
+    ModelListOrder getOrderFromShip(@Form( name="ShipID" ) int ShipID);
+
 
 }

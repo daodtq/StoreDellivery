@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,8 +9,8 @@
     <RelativeLayout
         android:id="@+id/relSearch"
         android:layout_width="match_parent"
-        android:background="@color/orange_primary"
-        android:layout_height="200dp">
+        android:layout_height="200dp"
+        android:background="@color/orange_primary">
 
         <RelativeLayout
             android:id="@+id/layout"
@@ -22,14 +21,15 @@
                 android:id="@+id/browse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
                 android:layout_marginLeft="22dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginBottom="15dp"
                 android:text="Profile"
                 android:textColor="@android:color/white"
                 android:textSize="35sp"
                 android:textStyle="bold"
                 android:typeface="monospace" />
+
             <ImageView
                 android:id="@+id/ivLogout"
                 android:layout_width="40dp"
@@ -50,10 +50,10 @@
         android:id="@+id/search_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="100dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
         android:clipToPadding="false"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="10dp"
@@ -81,9 +81,9 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_gravity="center"
+                        android:layout_margin="10dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/store"
-                        android:layout_margin="10dp"/>
+                        android:src="@drawable/store" />
 
                 </LinearLayout>
 
@@ -95,19 +95,19 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
-                        android:gravity="center_vertical"
-                        android:layout_marginLeft="10dp">
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_vertical">
 
                         <TextView
-                            android:fontFamily="@font/utm_avo"
                             android:id="@+id/tvStoreName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/utm_avo"
                             android:text="Cửa hàng abc"
-                            android:textSize="20dp"
-                            android:textStyle="bold"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
 
 
                     </RelativeLayout>
@@ -121,7 +121,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_below="@+id/card_profile_name"
-                android:background="@color/grey_10"/>
+                android:background="@color/grey_10" />
 
             <LinearLayout
                 android:id="@+id/linear1"
@@ -136,60 +136,64 @@
                     android:layout_weight="8">
 
                     <TextView
-                        android:fontFamily="@font/utm_avo"
                         android:id="@+id/account_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Điện thoại: "
-                        android:textSize="16sp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
-                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/black"/>
-                    <TextView
                         android:fontFamily="@font/utm_avo"
+                        android:text="Điện thoại: "
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
                         android:id="@+id/tvStorePhone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:fontFamily="@font/utm_avo"
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
                 </LinearLayout>
             </LinearLayout>
+
             <View
                 android:id="@+id/view2"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_below="@+id/linear1"
-                android:background="@color/grey_10"/>
+                android:background="@color/grey_10" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_below="@id/view2"
                 android:orientation="horizontal">
+
                 <TextView
-                    android:fontFamily="@font/utm_avo"
                     android:id="@+id/diachi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Địa chỉ: "
-                    android:textSize="16sp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-                    android:textColor="@color/black"/>
-                <TextView
                     android:fontFamily="@font/utm_avo"
+                    android:text="Địa chỉ: "
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
                     android:id="@+id/tvStoreAddress"
                     android:layout_width="match_parent"
-                    android:lines="1"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="10dp"
-                    android:layout_gravity="center"
+                    android:fontFamily="@font/utm_avo"
+                    android:lines="1"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
@@ -209,7 +213,6 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="60dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="60dp"
         android:clipToPadding="false"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="10dp"
@@ -233,10 +236,10 @@
                 android:layout_height="60dp">
 
                 <TextView
-                    android:fontFamily="@font/utm_avo"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/utm_avo"
                     android:gravity="center_vertical"
                     android:text="Tất cả đơn hàng"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
@@ -246,24 +249,50 @@
             </RelativeLayout>
 
             <View
-                android:id="@+id/view4"
+                android:id="@+id/view5"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_below="@+id/donHang"
+                android:layout_below="@id/donHang"
+                android:background="@color/grey_10" />
+
+            <RelativeLayout
+                android:id="@+id/Tab_ship"
+                android:layout_below="@id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/utm_avo"
+                    android:gravity="center_vertical"
+                    android:text="Định vị Shipper"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/Tab_ship"
+                android:layout_height="1dp"
                 android:background="@color/grey_10" />
 
             <RelativeLayout
                 android:id="@+id/thongKe"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_below="@id/donHang">
+                android:layout_below="@id/view4">
 
                 <TextView
-                    android:fontFamily="@font/utm_avo"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/utm_avo"
                     android:gravity="center_vertical"
                     android:text="Thống kê"
                     android:textColor="@color/black"
